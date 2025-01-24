@@ -149,6 +149,19 @@ const SubmitButton = styled(motion.button)`
   margin-top: 3px;
 `;
 
+const SkipQuestionButton = styled(motion.button)`
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #FF5F5F 0%, #C850C0 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 3px;
+`;
+
 const FloatingEmoji = styled(motion.div)`
   position: absolute;
   font-size: 2rem;
@@ -230,6 +243,11 @@ const GameScreen = () => {
     }
   };
 
+  const handleSkipQuestion = () => {
+    setCurrentQuestion(generateQuestion(difficulty));
+    setUserAnswer('');
+  };
+
   const handleTimeUp = () => {
     setGameState('ended');
   };
@@ -287,6 +305,14 @@ const GameScreen = () => {
               </NumberKey>
             ))}
           </NumberGrid>
+
+          <SkipQuestionButton
+            onClick={handleSkipQuestion}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Skip Question
+          </SkipQuestionButton>
 
           <SubmitButton
             onClick={handleSubmit}

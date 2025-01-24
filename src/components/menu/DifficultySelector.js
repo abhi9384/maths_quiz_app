@@ -30,7 +30,7 @@ const DifficultySelector = () => {
   const difficulties = [
     { id: 'easy', label: 'Easy (1-10)' },
     { id: 'medium', label: 'Medium (11-50)' },
-    { id: 'hard', label: 'Hard (51-100)' }
+    { id: 'hard', label: 'Hard (51-200)' }
   ];
 
   return (
